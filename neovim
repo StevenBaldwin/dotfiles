@@ -1,0 +1,51 @@
+" Steve J Baldwin NeoVim Config
+set background=dark		
+colo gruvbox
+set number
+set relativenumber
+
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/LeaderF'
+Plug 'vim-airline/vim-airline'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'thinca/vim-ref'
+Plug 'elixir-lang/vim-elixir'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
+call plug#end()
+
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsExpandTrigger           = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger      = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <M-[> <Esc>
+    tnoremap <C-v><Esc> <Esc>
+endif
+
+" My Quick Snippets (Using built in autocmd is a little faster than snippets, but has no autocomplete prompt to remind me of all my snippets)
+" tex
+
+" Inserts a small area for a graphic to fit in
+autocmd FileType tex inoremap ;i \resizebox{.7\textwidth}{!}{<CR>\includegraphics{x}<CR>}<CR>\newline<Esc>kkfxxi
+
+" Inserts bold tag
+autocmd FileType tex inoremap ;b \textbf{}
+
+" Inserts align section
+autocmd FileType tex inoremap ;a \begin{align*}<CR><CR>\end{align*}<Esc>ki
