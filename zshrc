@@ -108,17 +108,17 @@ function countdown(){
 }
 
 function gPomo(){
-	nvim ~/PlainText/Pomo/$(date '+%a_%b_%d_%Y.pomo') 
-	# Directs me to a plaintext file where I track my daily goals & timebox.
+	nvim ~/PlainText/Pomo/$(date '+%a_%b_%d_%Y.pomo')
 }
+
 
 function bgpdf(){
 	nohup zathura $1 &
 }
 
-alias pb='countdown 300 && while true; do play /home/stecen/loop.wav; sleep 10; done'
+alias pomob='countdown 300 && while true; do play /home/stecen/loop.wav; sleep 10; done'
 
-alias ps='countdown 1500 && while true; do play /home/stecen/cash.mp3; sleep 10; done'
+alias pomos='countdown 1500 && while true; do play /home/stecen/cash.mp3; sleep 10; done'
 
 alias g327='cd ~/School/ECE327'
 alias g351='cd ~/School/ECE351'
@@ -127,7 +127,7 @@ alias g380='cd ~/School/ECE380'
 alias g300='cd ~/School/BET300'
 alias gIP='cd ~/School/InterviewPrep'
 
-alias gLC='nohup firefox -new-window "https://leetcode.com/" & clear'
+alias gLC='nohup firefox -new-window "https://leetcode.com/" &'
 alias gLearn='nohup firefox -new-window "https://learn.uwaterloo.ca/" & clear'
 
 # Aliases for ECE351
